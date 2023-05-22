@@ -1,0 +1,30 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.headerTop{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.headerTopA{
+    font-size: 6px;
+    margin: 0 5px;
+}
+
+header{
+    margin:0 auto;
+    
+}
+
+
+
+.headerTitle>h1{
+    text-align: center;
+
+}
+
+.headerTitle{
+    background-color: lightgray;
+}
