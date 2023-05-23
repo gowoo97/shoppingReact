@@ -6,6 +6,7 @@ a{
 .headerTop{
     display: flex;
     justify-content: flex-end;
+    height: 5px;
 }
 
 .headerTopA{
@@ -22,7 +23,8 @@ header{
 
 .headerTitle>h1{
     text-align: center;
-
+    margin-bottom: 0;
+    margin-top: 20px;
 }
 
 .headerTitle{

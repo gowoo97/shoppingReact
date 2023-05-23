@@ -1,0 +1,12 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.navItem{
+    display: inline-block;
+    padding: 20px;
+    margin-top: 0;
+}
