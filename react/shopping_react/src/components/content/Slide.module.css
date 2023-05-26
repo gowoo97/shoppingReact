@@ -16,6 +16,9 @@
 .slide_item{
     position: relative;
     min-width: 976px;
+    transition-property: left; /* 어떤 css 프로퍼티를 transition할지 지정 */
+    transition-duration: 2s;
+    left:0;
 }
 
 .slide_item:nth-child(1){
