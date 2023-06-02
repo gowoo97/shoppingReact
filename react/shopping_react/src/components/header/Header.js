@@ -8,7 +8,7 @@ const Header=()=>{
         <header>
            <div className={ styles.headerTop }>
                 
-                <Link><span className={styles.headerTopA}>Login</span></Link>
+                <Link to="/Login"><span className={styles.headerTopA}>Login</span></Link>
                 <Link><span className={styles.headerTopA}>MyPage</span></Link>
                 <Link><span className={styles.headerTopA}>Cart</span></Link>
 
