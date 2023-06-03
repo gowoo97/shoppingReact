@@ -1,4 +1,4 @@
-#SignInForm{
+#SignUpForm{
     border: 0.5px solid rgba(0, 0, 0, .5);
     width: 300px;
     height: 300px;
@@ -7,17 +7,18 @@
    justify-content: center;
    align-content: center;
    padding: 50px;
-margin-top: 10%;
-margin-left: 50%;
+    margin-top: 10%;
+    margin-left: 50%;   
+    margin-bottom: 10%;
 transform: translateX(-50%);
 }
 
-#SignInForm>h1{
+#SignUpForm>h1{
     text-align: center;
 }
 
 
-#SignInForm input{
+#SignUpForm input{
     width: 100%;
     padding: 0;
     height: 50px;

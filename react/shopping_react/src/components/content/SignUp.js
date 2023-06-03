@@ -1,23 +1,25 @@
 import { Link } from "react-router-dom";
-import styles from './SignIn.module.css';
+import styles from './SignUp.module.css';
 
-const SignIn = () =>{
+const SignUp = () =>{
     return(
-        <div id={styles.SignInForm}>
+        <div id={styles.SignUpForm}>
         <h1>회원가입</h1>
         <div>
-            <label for="ID">아이디</label>
+            <label>아이디
             <br/>
             <input type="text" id="ID"></input>
+            </label>
         </div>
         <div>
-            <label for="PW">비밀번호</label>
+            <label>비밀번호
             <br/>
             <input type="password" id="PW"></input>
+            </label>
         </div>
         <div>
             <br/>
-        <input type="submit" value="로그인"></input>
+        <input type="submit" value="회원가입"></input>
         </div>
         
        
@@ -30,4 +32,4 @@ const SignIn = () =>{
 }
 
 
-export default SignIn;
+export default SignUp;
