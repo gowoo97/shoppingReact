@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import styles from './Slide.module.css';
 import {useState} from 'react';
-
+import React from 'react';
 const Slide = () =>{
     const [count,setCount] =useState(0);
 

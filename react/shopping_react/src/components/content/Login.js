@@ -1,5 +1,6 @@
 import styles from './Login.module.css';
 import { Link } from "react-router-dom";
+import React from 'react';
 const Login = () => {
 
     return(
@@ -21,7 +22,7 @@ const Login = () => {
             </div>
             <div>
                 <p>
-                회원이 아니신가요? <Link to="/signIn"><span>회원가입</span></Link>
+                회원이 아니신가요? <Link to="/signUp"><span>회원가입</span></Link>
                 </p>
             </div>
            
