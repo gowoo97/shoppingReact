@@ -55,7 +55,7 @@ const Slide = () =>{
             return  () =>{
                 clearInterval(interval);
              } ;
-        },[]
+        },[count]
     );
    
     
