@@ -1,10 +1,17 @@
 import styles from './Login.module.css';
 import { Link } from "react-router-dom";
-import React from 'react';
+import React, { useContext } from 'react';
+import { LoginContext } from '../../App';
+
+
 const Login = () => {
 
+    const value=useContext(LoginContext);
+
     return(
-        <div id={styles.LoginForm}>
+        
+        
+            <div id={styles.LoginForm}>
             <h1>로그인</h1>
             <div>
                 <label for="ID">아이디</label>
@@ -18,7 +25,7 @@ const Login = () => {
             </div>
             <div>
                 <br/>
-            <input type="submit" value="로그인"></input>
+            <input type="submit" value="로그인" onClick={()=>value.action('logout')}></input>
             </div>
             <div>
                 <p>
@@ -29,7 +36,11 @@ const Login = () => {
             
 
         </div>
-    );
+
+        )
+        
+        
+    
 
 
 }

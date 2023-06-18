@@ -4,16 +4,34 @@ import Nav from './components/nav/Nav';
 import Slide from './components/content/Slide';
 import Login from './components/content/Login';
 import SignUp from './components/content/SignUp';
-import React , { Component}  from 'react';
+import React , { Component,createContext,useState}  from 'react';
 import Footer from './components/footer/Footer';
 import Products from './components/products/Products'
 import { BrowserRouter, Route, Switch, Link, Routes } from "react-router-dom";
 
+export const LoginContext=createContext({
+  text:'Login',
+  action:()=>{}
+});
+
+
 function App() {
+
+  const [text,setText]=useState('Login');
+
+  const value={
+    text:text,
+    action:setText
+  };
+
   return (
+    
     <BrowserRouter>
     <div className="App">
+   
+      <LoginContext.Provider value={value}>
         <Header></Header>
+      
         <Nav></Nav>
         <Routes>
         <Route path='/' element={<><Slide></Slide><Products></Products></> }></Route>
@@ -21,9 +39,13 @@ function App() {
         <Route path='/SignUp' element={ <SignUp/> }></Route>
         </Routes>
         <Footer></Footer>
-
+        
+        </LoginContext.Provider>
+  
     </div>
+    
     </BrowserRouter>
+   
   );
 }
 

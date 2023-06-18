@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from './SignUp.module.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 
 const SignUp = () =>{
-
+    const navigate=useNavigate();
     const [inputs,setInputs]=useState({
         id:'',
         pw:''
@@ -23,12 +23,12 @@ const SignUp = () =>{
     const {id,pw}=inputs;
 
     const register=()=>{
-
+        
         axios.post('http://localhost:8080/user',{
             id:id,
             pw:pw
         }).then((response)=>{
-            console.log("hello");
+            navigate("/");
         });
     }
 
