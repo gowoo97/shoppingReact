@@ -8,13 +8,22 @@ const Header=()=>{
 
     const value=useContext(LoginContext);
 
+
+    const handelLogOut=()=>{
+        value.action('');
+    }
+
     return(
         <>
         
           
             <header>
             <div className={ styles.headerTop }>
-                 <Link to="/Login"><span className={styles.headerTopA}>{value.text}</span></Link>
+                 {
+                    (value.user==='')?
+                    (<Link to='/Login'><span className={styles.headerTopA}>Login</span></Link>):
+                    (<Link to='/'><span className={styles.headerTopA} onClick={handelLogOut}>Logout</span></Link>)
+                 }
                  <Link><span className={styles.headerTopA}>MyPage</span></Link>
                  <Link><span className={styles.headerTopA}>Cart</span></Link>
  
