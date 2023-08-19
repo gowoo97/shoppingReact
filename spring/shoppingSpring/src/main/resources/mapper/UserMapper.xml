@@ -6,4 +6,8 @@
 	<insert id="insertUser" parameterType="User">
 		insert into member(id,pw) values(#{id},#{pw})
 	</insert>
+	
+	<select id="selectUser" parameterType="String">
+		select * from member where id=#{id}
+	</select>
 </mapper>  

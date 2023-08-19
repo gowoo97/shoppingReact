@@ -1,18 +1,15 @@
 package com.gowoo.shopping.DTO;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+@Builder
+public class TokenDTO {
 	
-	private String id;
-	
-	private String pw;
-	
-	
-	
+	private String token;
 }

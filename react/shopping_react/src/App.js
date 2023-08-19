@@ -10,18 +10,18 @@ import Products from './components/products/Products'
 import { BrowserRouter, Route, Switch, Link, Routes } from "react-router-dom";
 
 export const LoginContext=createContext({
-  user:'',
-  action:()=>{}
+  loginStat:false,
+  setLoginStat:()=>{}
 });
 
 
 function App() {
 
-  const [user,setUser]=useState('');
+  const [loginStat,setLoginStat]=useState(false);
 
   const value={
-    user:user,
-    action:setUser
+    loginStat:loginStat,
+    setLoginStat:setLoginStat
   };
 
   return (

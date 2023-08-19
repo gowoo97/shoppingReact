@@ -10,7 +10,7 @@ const Header=()=>{
 
 
     const handelLogOut=()=>{
-        value.action('');
+        value.setLoginStat(false);
     }
 
     return(
@@ -20,7 +20,7 @@ const Header=()=>{
             <header>
             <div className={ styles.headerTop }>
                  {
-                    (value.user==='')?
+                    (value.loginStat===false)?
                     (<Link to='/Login'><span className={styles.headerTopA}>Login</span></Link>):
                     (<Link to='/'><span className={styles.headerTopA} onClick={handelLogOut}>Logout</span></Link>)
                  }
