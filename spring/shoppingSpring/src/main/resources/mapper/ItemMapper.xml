@@ -6,4 +6,9 @@
 	<select id="getItems">
 		select * from item
 	</select>
+	
+	<select id="getItem" parameterType="Long" resultType="Item">
+		select * from item where seq=#{seq}
+	</select>
+	
 </mapper>  

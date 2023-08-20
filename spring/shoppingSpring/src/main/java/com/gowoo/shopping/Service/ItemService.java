@@ -16,7 +16,11 @@ public class ItemService {
 	private ItemMapper mapper;
 	
 	
-	public List<Item> getItems(){
-		return mapper.getItems();
+	public List<Item> getItems(int cnt){
+		return mapper.getItems(cnt);
+	}
+	
+	public Item getItem(long seq) {
+		return mapper.getItem(seq);
 	}
 }

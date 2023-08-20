@@ -10,6 +10,8 @@ import com.gowoo.shopping.DTO.Item;
 public interface ItemMapper {
 
 	
-	List<Item> getItems();
+	List<Item> getItems(int cnt);
 	
+	Item getItem(long seq);
+
 }

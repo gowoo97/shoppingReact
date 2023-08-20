@@ -15,8 +15,6 @@ const Header=()=>{
 
     return(
         <>
-        
-          
             <header>
             <div className={ styles.headerTop }>
                  {
@@ -26,23 +24,23 @@ const Header=()=>{
                  }
                  <Link><span className={styles.headerTopA}>MyPage</span></Link>
                  <Link><span className={styles.headerTopA}>Cart</span></Link>
- 
+
              </div>
              <div className={styles.headerTitle}>
-                 
+
                  <h1>SHOP</h1>
-                 
-                 
+
+
              </div>
          </header>
-         
-        
-       
-        
-            
-       
 
-   
+
+
+
+
+
+
+
    </>
     );
 }
