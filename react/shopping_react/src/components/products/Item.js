@@ -5,7 +5,7 @@ const Item = (props)=>{
     return(
         <div className={styles.product}>
             <div className={styles.itemImg}>
-                {props.img}
+                 <img src={props.img}></img>
             </div>
             <div className={styles.container}>
              <div className={styles.itemTitle}>
@@ -13,9 +13,9 @@ const Item = (props)=>{
               </div>
             <span className={styles.itemPrice}>
                 {props.price}
-            </span> 
+            </span>
             </div>
-            
+
         </div>
     )
 }

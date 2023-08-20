@@ -26,9 +26,7 @@ public class LoginController {
 	private JWTService jwtService; 
 	
 	@PostMapping
-	public ResponseEntity<TokenDTO> login(@RequestBody User user) {
-		
-		
+	public ResponseEntity<TokenDTO> login(@RequestBody User user) {	
 			if(userService.Login(user)) {
 				String token=jwtService.createToken(user.getId());
 				TokenDTO tokenDTO=new TokenDTO().builder().token(token).build();

@@ -8,6 +8,7 @@
 
 .itemImg{
     height:80%;
+    overflow: hidden;
 }
 
 .container{
