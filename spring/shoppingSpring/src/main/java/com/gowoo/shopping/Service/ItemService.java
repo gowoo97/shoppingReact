@@ -23,4 +23,8 @@ public class ItemService {
 	public Item getItem(long seq) {
 		return mapper.getItem(seq);
 	}
+	
+	public Item getItemByItemName(String itemName) {
+		return mapper.getItemByItemName(itemName);
+	}
 }

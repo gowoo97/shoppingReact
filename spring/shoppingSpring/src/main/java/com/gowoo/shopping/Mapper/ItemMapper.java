@@ -13,5 +13,7 @@ public interface ItemMapper {
 	List<Item> getItems(int cnt);
 	
 	Item getItem(long seq);
+	
+	Item getItemByItemName(String itemName);
 
 }

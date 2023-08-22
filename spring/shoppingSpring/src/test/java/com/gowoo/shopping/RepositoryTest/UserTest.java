@@ -17,7 +17,7 @@ public class UserTest {
 	
 	@Test
 	public void selectUser() {
-		User user=new User("gggg","1234");
+		User user=mapper.selectUser("gggg");
 		assertEquals(user.getId(),"gggg");
 	}
 

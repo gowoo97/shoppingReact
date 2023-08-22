@@ -3,10 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { useContext, useState } from 'react';
 import { LoginContext } from '../../App';
 import axios from 'axios';
+import {Cookies} from 'react-cookie';
 
 
 const Login = () => {
 
+    const cookies = new Cookies();
     const value=useContext(LoginContext);
     const navigate=useNavigate();
     const [id,setId]=useState('');
@@ -19,7 +21,8 @@ const Login = () => {
             id:id,
             pw:pw
         }).then(res=>{
-            localStorage.setItem('token',res.data.token);
+            cookies.set("token",res.data);
+            cookies.set("userId",id);
         });
 
         navigate("/");

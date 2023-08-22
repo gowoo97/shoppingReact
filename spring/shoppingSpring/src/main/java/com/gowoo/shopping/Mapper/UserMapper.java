@@ -10,5 +10,6 @@ public interface UserMapper {
 	void insertUser(User user);
 	
 	User selectUser(String id);
+
 	
 }

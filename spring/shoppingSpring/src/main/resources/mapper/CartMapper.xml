@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.gowoo.shopping.Mapper.CartMapper">
+	<insert id="insertToCart"  parameterType="hashmap">
+		insert into cart(user_id,item_id,cnt) values(#{user_seq},#{item_seq},#{cnt})
+	</insert>
+	
+</mapper>  

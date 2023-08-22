@@ -2,15 +2,17 @@ import styles  from './Header.module.css';
 import { Link } from "react-router-dom";
 import React,{useContext} from 'react';
 import { LoginContext } from '../../App';
-
+import {Cookies} from 'react-cookie';
 
 const Header=()=>{
 
     const value=useContext(LoginContext);
 
-
+    const cookies = new Cookies();
     const handelLogOut=()=>{
+        cookies.remove("token");
         value.setLoginStat(false);
+
     }
 
     return(
