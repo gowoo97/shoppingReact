@@ -1,9 +1,9 @@
 package com.gowoo.shopping.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,14 +26,24 @@ public class LoginController {
 	private JWTService jwtService; 
 	
 	@PostMapping
-	public ResponseEntity<TokenDTO> login(@RequestBody User user) {	
+	public ResponseEntity<String> login(@RequestBody User user) {	
 			if(userService.Login(user)) {
+				
 				String token=jwtService.createToken(user.getId());
-				TokenDTO tokenDTO=new TokenDTO().builder().token(token).build();
-				return ResponseEntity.ok().body(tokenDTO);
+				HttpHeaders responseHeaders = new HttpHeaders();
+				responseHeaders.set("Authorization","Bearer "+token);
+				return ResponseEntity.ok().headers(responseHeaders)
+						.body(token);
 			}
 			else {
 				return ResponseEntity.badRequest().body(null);
 			}
+	}
+	
+	@PostMapping("/check")
+	public void checkToken(@RequestBody TokenDTO token) {
+		System.out.println(token);
+		jwtService.checkClaim(token.getToken());
+		
 	}
 }

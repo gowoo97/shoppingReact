@@ -21,7 +21,7 @@ const Login = () => {
             id:id,
             pw:pw
         }).then(res=>{
-            cookies.set("token",res.data);
+            console.log(res.data);
             cookies.set("userId",id);
         });
 
