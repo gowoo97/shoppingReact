@@ -15,14 +15,15 @@ const Login = () => {
     const [pw,setPw]=useState('');
     const handleLogin=()=>{
 
-        value.setLoginStat(true);
 
-        axios.post("http://localhost:8080/login",{
+        value.setLoginStat(true);
+        axios.post("http://localhost:8080/auth/signIn",{
             id:id,
             pw:pw
         }).then(res=>{
-            console.log(res.data);
-            cookies.set("userId",id);
+
+            localStorage.setItem('key',res.data.token);
+
         });
 
         navigate("/");

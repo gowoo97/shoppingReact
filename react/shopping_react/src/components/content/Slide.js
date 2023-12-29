@@ -18,11 +18,10 @@ const Slide = () =>{
     const next= ()=>{
         const items=document.getElementsByClassName( styles.slide_item );
         const dots=document.getElementsByClassName( styles.dot);
-        
+
         setCount(count+1);
         rmDot();
         dots[(count+1)%5].setAttribute("style","background-color:black");
-        console.log(count);
         if(count === 4){
             for(let i =0 ;i<items.length;i++){
                 items[i].setAttribute("style","left:0px");
@@ -38,30 +37,30 @@ const Slide = () =>{
                 else{
                     now=parseInt(now)-976;
                 }
-    
+
                 items[i].setAttribute("style","left:"+now+"px");
             }
         }
 
 
-        
-    }    
+
+    }
 
 
     useEffect(
         ()=>{
-            
+
            const interval= setInterval(next,5000);
             return  () =>{
                 clearInterval(interval);
              } ;
         },[count]
     );
-   
-    
+
+
 
     return (
-        <div className={ styles.slide }> 
+        <div className={ styles.slide }>
             <div className={ styles.slide_container}>
                 <div className={styles.slide_item}>1</div>
                 <div className={styles.slide_item}>2</div>

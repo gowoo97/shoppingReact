@@ -17,7 +17,8 @@ public class UserController {
 	private UserService service;
 	
 	@PostMapping("/user")
-	public void enrollUser(@RequestBody User user) {
+	public void enrollUser(User user) {
+		System.out.println(user);
 		service.enrollUser(user);
 	}
 }

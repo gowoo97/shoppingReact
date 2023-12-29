@@ -23,8 +23,8 @@ const SignUp = () =>{
     const {id,pw}=inputs;
 
     const register=()=>{
-        
-        axios.post('http://localhost:8080/user',{
+
+        axios.post('http://localhost:8080/auth/signUp',{
             id:id,
             pw:pw
         }).then((response)=>{
@@ -52,9 +52,9 @@ const SignUp = () =>{
             <br/>
         <input type="button" value="회원가입" onClick={register}></input>
         </div>
-        
-       
-        
+
+
+
 
     </div>
     )

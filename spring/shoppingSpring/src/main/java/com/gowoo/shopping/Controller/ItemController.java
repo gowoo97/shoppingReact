@@ -25,7 +25,7 @@ public class ItemController {
 	public ResponseEntity<List<Item>> getItems(@PathVariable("count") int cnt){
 		List<Item> items=itemService.getItems(cnt);
 		return ResponseEntity.ok().body(items);
-	}
+	} 
 	
 	@GetMapping("/{seq}")
 	public ResponseEntity<Item> getItem(@PathVariable("seq") long seq){
