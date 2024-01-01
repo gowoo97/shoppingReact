@@ -7,9 +7,9 @@ import lombok.ToString;
 @ToString
 public class CartDTO {
 	
-	private String userId;
+	private int userId;
 	
-	private String itemName;
+	private int itemId;
 	
 	private int cnt;
 	

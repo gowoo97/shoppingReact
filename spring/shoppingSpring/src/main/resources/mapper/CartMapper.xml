@@ -4,7 +4,7 @@
         
 <mapper namespace="com.gowoo.shopping.Mapper.CartMapper">
 	<insert id="insertToCart"  parameterType="hashmap">
-		insert into cart(user_id,item_id,cnt) values(#{user_seq},#{item_seq},#{cnt})
+		insert into cart(user_seq,item_seq,cnt) values(#{user_seq},#{item_seq},#{cnt})
 	</insert>
 	
 </mapper>  

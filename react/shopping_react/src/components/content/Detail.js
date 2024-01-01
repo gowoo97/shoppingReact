@@ -15,6 +15,7 @@ const Detail=(props)=>{
         axios.get(`http://localhost:8080/item/`+seq)
         .then((res)=>{
             setItem(res.data);
+            console.log(res.data);
         });
     },[]);
 
@@ -30,13 +31,19 @@ const Detail=(props)=>{
     }
 
     const addToCart=function(){
-        axios.post("http://localhost:8080/cart",{
-            userId:cookies.get('userId'),
-            itemName:item.title,
-            cnt:count
-        }).then(res=>{
-            console.log(res.data);
-        });
+        fetch('http://localhost:8080/api/cart',{
+            method:"POST",
+            headers:{
+                Authorization: `Bearer ${localStorage.getItem('key')}`,
+                "Access-Control-Allow-Origin": true,
+                'Access-Control-Allow-Credentials':true,
+                'Content-Type': 'application/json;charset=UTF-8'
+            },
+            body:JSON.stringify({
+                itemId:item.seq,
+                cnt:count
+            })
+        }).then(res => res.json())
     }
 
     return (

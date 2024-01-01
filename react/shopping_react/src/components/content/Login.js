@@ -16,17 +16,18 @@ const Login = () => {
     const handleLogin=()=>{
 
 
-        value.setLoginStat(true);
+
         axios.post("http://localhost:8080/auth/signIn",{
             id:id,
             pw:pw
         }).then(res=>{
 
             localStorage.setItem('key',res.data.token);
-
+            value.setLoginStat(true);
+            navigate("/");
         });
 
-        navigate("/");
+
     }
 
     const handleId=(e)=>{

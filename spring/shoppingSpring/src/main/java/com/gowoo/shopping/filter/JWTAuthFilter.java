@@ -11,6 +11,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import com.gowoo.shopping.DTO.User;
 import com.gowoo.shopping.Service.JWTService;
 
 import jakarta.servlet.FilterChain;
@@ -32,15 +33,13 @@ public class JWTAuthFilter extends OncePerRequestFilter{
 			String token = parseBearerToken(request);
 			
 			if(token != null && !token.equalsIgnoreCase("null")) {
-				String userId = service.checkClaim(token);
+				User user = service.checkClaim(token);
 				AbstractAuthenticationToken authentication
-				= new UsernamePasswordAuthenticationToken(userId,null,
+				= new UsernamePasswordAuthenticationToken(user,null,
 						AuthorityUtils.NO_AUTHORITIES
 						);
-				authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-				SecurityContext securityContext=SecurityContextHolder.createEmptyContext();
-				securityContext.setAuthentication(authentication);
-				SecurityContextHolder.setContext(securityContext);
+				//authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+				SecurityContextHolder.getContext().setAuthentication(authentication);
 			}
 		}catch(Exception ex) {
 			

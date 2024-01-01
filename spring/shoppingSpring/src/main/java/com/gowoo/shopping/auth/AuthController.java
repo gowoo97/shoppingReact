@@ -34,7 +34,7 @@ public class AuthController {
 	public ResponseEntity<TokenDTO> signIn(@RequestBody User user){
 		if(userService.Login(user)) {
 			
-			TokenDTO token=jwtService.createToken(user.getId());
+			TokenDTO token=jwtService.createToken(user);
 			return ResponseEntity.ok().body(token);
 		}
 		else {

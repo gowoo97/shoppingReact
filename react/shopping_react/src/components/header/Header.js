@@ -10,9 +10,8 @@ const Header=()=>{
 
     const cookies = new Cookies();
     const handelLogOut=()=>{
-        cookies.remove("token");
+        localStorage.removeItem('key');
         value.setLoginStat(false);
-
     }
 
     return(
