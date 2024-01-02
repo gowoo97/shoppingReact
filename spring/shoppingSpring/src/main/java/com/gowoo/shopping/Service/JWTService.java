@@ -2,10 +2,12 @@ package com.gowoo.shopping.Service;
 
 import java.security.Key;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gowoo.shopping.DTO.TokenDTO;
 import com.gowoo.shopping.DTO.User;
+import com.gowoo.shopping.Mapper.UserMapper;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -17,7 +19,11 @@ public class JWTService {
 	
 	private Key key=Keys.hmacShaKeyFor("youcantrevealthesecretkey1234012300040".getBytes());
 	
+	@Autowired
+	private UserMapper userMapper;
+	
 	public TokenDTO createToken(User user) {
+		user = userMapper.selectUser(user.getId());
 		String token = Jwts.builder()
 				.claim("userId",user.getId())
 				.claim("pw",user.getPw())

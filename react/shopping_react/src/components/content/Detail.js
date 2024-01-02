@@ -31,19 +31,19 @@ const Detail=(props)=>{
     }
 
     const addToCart=function(){
-        fetch('http://localhost:8080/api/cart',{
-            method:"POST",
+        axios.post("http://localhost:8080/api/cart",{
+            itemId:item.seq,
+            cnt:count
+        },{
             headers:{
                 Authorization: `Bearer ${localStorage.getItem('key')}`,
-                "Access-Control-Allow-Origin": true,
+                "Access-Control-Allow-Origin": "*",
                 'Access-Control-Allow-Credentials':true,
                 'Content-Type': 'application/json;charset=UTF-8'
-            },
-            body:JSON.stringify({
-                itemId:item.seq,
-                cnt:count
-            })
-        }).then(res => res.json())
+            }
+        }).then(res=>{
+            console.log(res.data);
+        });
     }
 
     return (

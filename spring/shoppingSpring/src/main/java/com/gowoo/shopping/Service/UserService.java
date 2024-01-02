@@ -18,17 +18,17 @@ public class UserService {
 		mapper.insertUser(user);
 	}
 	
-	public boolean Login(User user) {
+	public User Login(User user) {
 		
 		User selected=mapper.selectUser(user.getId());
 		System.out.println(selected);
 		
 		//아이디와 비밀번호가 일치하면 true
 		if(selected.getId().equals(user.getId()) && selected.getPw().equals(user.getPw())) {
-			return true;
+			return selected;
 		}
 		else {
-			return false;
+			return null;
 		}
 		
 		

@@ -14,16 +14,17 @@ import com.gowoo.shopping.Service.CartService;
 
 import jakarta.servlet.http.HttpServletResponse;
 
-@CrossOrigin(origins = "http://localhost:8080")
+
 @RestController
 @RequestMapping("/api/cart")
+@CrossOrigin(origins = "*")
 public class CartController {
 
 	@Autowired
 	private CartService service;
 	
 	@PostMapping
-	public ResponseEntity addToCart(@RequestBody CartDTO cart,HttpServletResponse res) {
+	public ResponseEntity addToCart(@RequestBody CartDTO cart) {
 		
 		service.insertToCart(cart);
 		

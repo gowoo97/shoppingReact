@@ -18,17 +18,16 @@ public class CartService {
 	
 	public void insertToCart(CartDTO cart) {
 		
-		User user=getUserStat();
-		System.out.println("userId:"+user.getId());
-		HashMap<String,Object> hm=new HashMap<>();
 		
+		User user=getUserStat();
+		HashMap<String,Object> hm=new HashMap<>();
+	
 		hm.put("user_seq",user.getSeq());
 		hm.put("item_seq",cart.getItemId());
 		hm.put("cnt",cart.getCnt());
-		
+
 		cartMapper.insertToCart(hm);
-		
-		
+	
 	}
 	
 	

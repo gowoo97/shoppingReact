@@ -32,7 +32,7 @@ public class AuthController {
 	
 	@PostMapping("/signIn")
 	public ResponseEntity<TokenDTO> signIn(@RequestBody User user){
-		if(userService.Login(user)) {
+		if(userService.Login(user)!=null) {
 			
 			TokenDTO token=jwtService.createToken(user);
 			return ResponseEntity.ok().body(token);

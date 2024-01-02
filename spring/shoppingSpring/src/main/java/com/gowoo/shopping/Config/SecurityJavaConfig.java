@@ -3,6 +3,7 @@ package com.gowoo.shopping.Config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
@@ -25,6 +26,7 @@ public class SecurityJavaConfig{
         http.formLogin().disable();
         http.httpBasic().disable();
         http.authorizeRequests()
+        	.requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
         	.requestMatchers("/auth/**").permitAll()
         	.requestMatchers("/api/**").authenticated()
         	.anyRequest().permitAll();
