@@ -8,6 +8,7 @@ import React , { Component,createContext,useState}  from 'react';
 import Footer from './components/footer/Footer';
 import Products from './components/products/Products'
 import Details from './components/content/Detail'
+import CartDetail from './components/content/CartDetail';
 import { BrowserRouter, Route, Switch, Link, Routes } from "react-router-dom";
 
 export const LoginContext=createContext({
@@ -39,6 +40,7 @@ function App() {
         <Route path='/Login' element={ <Login/> }></Route>
         <Route path='/SignUp' element={ <SignUp/> }></Route>
         <Route path='/detail/:seq' element={ <Details/> }></Route>
+        <Route path='/cart' element={ <CartDetail/>}></Route>
         </Routes>
         <Footer></Footer>
 

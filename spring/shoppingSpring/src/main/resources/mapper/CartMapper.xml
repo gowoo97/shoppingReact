@@ -7,4 +7,13 @@
 		insert into cart(user_seq,item_seq,cnt) values(#{user_seq},#{item_seq},#{cnt})
 	</insert>
 	
+	
+	
+	<select id="getCartList" resultType="map" parameterType="int">
+		select * from 
+			cart c,item i ,member m
+				where c.user_seq = m.seq and
+				c.item_seq = i.seq and c.user_seq=#{value};
+	</select>
+	
 </mapper>  

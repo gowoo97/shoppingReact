@@ -24,7 +24,7 @@ const Header=()=>{
                     (<Link to='/'><span className={styles.headerTopA} onClick={handelLogOut}>Logout</span></Link>)
                  }
                  <Link><span className={styles.headerTopA}>MyPage</span></Link>
-                 <Link><span className={styles.headerTopA}>Cart</span></Link>
+                 <Link to='cart'><span className={styles.headerTopA}>Cart</span></Link>
 
              </div>
              <div className={styles.headerTitle}>
