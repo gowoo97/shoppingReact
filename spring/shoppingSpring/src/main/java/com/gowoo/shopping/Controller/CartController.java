@@ -33,10 +33,8 @@ public class CartController {
 	}
 	
 	@GetMapping
-	public List<Map<String,Object>> getCartList(@RequestBody Map<String,Integer> m){
-		
-		return service.getCartList(m.get("value"));
-		
+	public List<Map<String,Object>> getCartList(){
+		return service.getCartList();
 	}
 	
 	

@@ -4,12 +4,12 @@ import styles from './CartDetail.module.css';
 
 const cartDetail=(props)=>{
     return (
-        <div style={{border:"1px solid black"}}>
-            <div><img></img></div>
+        <div className={styles.container}>
+            <div><img src={props.image}></img></div>
             <div>
-                <div>title</div>
-                <div>price</div>
-                <div>cnt</div>
+                <div>{props.title}</div>
+                <div>{props.price}</div>
+                <div>{props.cnt}</div>
             </div>
         </div>
     );

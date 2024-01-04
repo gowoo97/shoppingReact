@@ -28,8 +28,9 @@ public class CartService {
 	}
 	
 	
-	public List<Map<String,Object>> getCartList(int value){
-		return	cartMapper.getCartList(value);
+	public List<Map<String,Object>> getCartList(){
+		User user=getUserStat();
+		return	cartMapper.getCartList(user.getSeq());
 	}
 	
 	

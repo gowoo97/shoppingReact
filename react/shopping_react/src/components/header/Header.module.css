@@ -11,12 +11,13 @@ a{
 
 .headerTopA{
     font-size: 6px;
-    margin: 0 5px;
+    margin: 10px 5px;
+    cursor: pointer;
 }
 
 header{
     margin:0 auto;
-    
+
 }
 
 
