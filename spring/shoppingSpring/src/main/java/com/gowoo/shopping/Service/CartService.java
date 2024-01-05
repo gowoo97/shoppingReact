@@ -38,7 +38,9 @@ public class CartService {
 		return (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 	}
 	
-	
+	public void deleteCart(int id) {
+		cartMapper.deleteCart(id);
+	}
 	
 	
 }

@@ -21,7 +21,6 @@ const Login = () => {
             id:id,
             pw:pw
         }).then(res=>{
-
             localStorage.setItem('key',res.data.token);
             value.setLoginStat(true);
             navigate("/");

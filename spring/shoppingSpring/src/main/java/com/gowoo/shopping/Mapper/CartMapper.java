@@ -14,4 +14,5 @@ public interface CartMapper {
 	
 	List<Map<String,Object>> getCartList(int value);
 	
+	void deleteCart(int id);
 }

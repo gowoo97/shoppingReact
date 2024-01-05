@@ -21,7 +21,8 @@ const cartList=(props)=>{
             {
                 items.map((item,index)=>{
                     return(
-                        <CartDetail key={index} cnt={item.cnt} image={item.image} price={item.price} title={item.title}></CartDetail>
+                        <CartDetail key={item.id} id={item.id} cnt={item.cnt} image={item.image}
+                         price={item.price} title={item.title} items={items} setItem={setItems}></CartDetail>
                     );
                 })
             }

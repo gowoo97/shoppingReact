@@ -1,5 +1,16 @@
 .container{
     border: 1px solid black;
     display: flex;
+}
 
+.content{
+    position: relative;
+    width: 100%;
+}
+
+.deleteBtt{
+    position: absolute;
+    top: 0px;
+    right: 1px;
+    cursor: pointer;
 }

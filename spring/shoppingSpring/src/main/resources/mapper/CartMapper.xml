@@ -14,4 +14,9 @@
 				c.item_seq = i.seq and c.user_seq=#{value};
 	</select>
 	
+	
+	<delete id="deleteCart" parameterType="int">
+		delete from cart where id=#{id}
+	</delete>
+	
 </mapper>  
